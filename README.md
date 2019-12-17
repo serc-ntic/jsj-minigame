@@ -30,4 +30,6 @@
     "https://github.com/InfoJr/git/blob/master/pages/workflow.md"
     "https://git-scm.com/docs"
 
-
+### Guia de Estilo
+    Baseado no guia de estilo do Node.JS. Artigo em: "https://medium.com/swlh/node-js-coding-style-guidelines-74a20d00c40b"
+    
