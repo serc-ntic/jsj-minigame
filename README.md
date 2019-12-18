@@ -11,7 +11,7 @@
             -   `$git remote add upstream https://github.com/serc-ntic/{projeto}`
 
 ######  Depois da realização desses passos o programador já pode iniciar seu fluxo de programação.
-**Lembrando que uma boa prática é a utilização de branchs(ramos), para mais informações acessar o link "https://github.com/InfoJr/git/blob/master/pages/workflow.md".**
+**Lembrando que uma boa prática é a utilização de branchs(ramos), para mais informações acessar o link (https://github.com/InfoJr/git/blob/master/pages/workflow.md).**
 
 ### Fluxo de programação
 - Sempre ao executar `git commit`:
@@ -27,7 +27,8 @@
 - Um pull request é uma solicitação de alteração no repositório central.Após executar o git push, é necessário criar um pull request para que seu código seja mesclado com o principal.
 
 ### Para mais informações acessar os links de consulta, que são eles:
-    "https://github.com/InfoJr/git/blob/master/pages/workflow.md"
-    "https://git-scm.com/docs"
+    (https://github.com/InfoJr/git/blob/master/pages/workflow.md)
+    (https://git-scm.com/docs)
 
-
+### Guia de Estilo
+    Baseado no guia de estilo do Node.JS. Artigo em: (https://medium.com/swlh/node-js-coding-style-guidelines-74a20d00c40b)
