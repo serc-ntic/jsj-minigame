@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Biroliro's Cassino</title>
     <style>
-        body {background-color: rgb(57, 160, 88);
-        color: white;
-        font: normal 25pt Arial;
+        body {
+            background-color: rgb(57, 160, 88);
+            color: white;
+            font: normal 25pt Arial;
         }
+
         h1 {
-            color:rgb(195, 205, 50);
+            color: rgb(195, 205, 50);
         }
-</style>
+    </style>
 </head>
+
 <body>
- <h1> Biroliro's Cassino</h1>
- <P>welcome to Biroliro's betting games!</P>
- <p>Escolhe seu mini jogo abaixo:</p> 
- <a href="./mizeraGuessing.html">Mizera Guessing!</a>
- <br>
- <a href="./mizeraGuessing.html">2050 Election</a>
- <script>
-     window.alert("teste");
-     let nomePlayer = window.prompt("Identifique-se:");
-     window.alert("Ola " + nomePlayer);
-     window.alert("Receba aqui TK$ 100 e divirta-se.");
- </script> 
+    <h1> Biroliro's Cassino</h1>
+    <P>welcome to Biroliro's betting games!</P>
+    <script>
+        let nome = window.prompt("Identifique-se:");
+        document.write(`<br>Olá ${nome}, bem vindo ao nosso cassino <br>`);
+        document.write(`Receba de cortesia TK$ 100 de crédito.`);
+    </script>
+
+    <p>Escolhe seu mini jogo abaixo:</p>
+    <a href="./mizeraGuessing.html">Mizera Guessing!</a>
+    <br>
+    <a href="./2050Election.html">2050 Election</a>
 </body>
+
 </html>
