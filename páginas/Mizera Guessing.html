@@ -5,15 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mizera Guessing</title>
-    <style>body {background-color: rgb(223, 221, 204);
-        color: white;
-        font: normal 23pt Arial;
+    <style>
+        body {  
+            background: rgb(0,39,118);
+            color: white;
+            font: normal 23pt Arial;
         }
         h1 {
-            color:rgb(223, 163, 74);
-        }</style>
+            color:white;
+        }
+    </style>
 </head>
 <body>
     <h1>Mizera Guessing</h1>
+
+    <script>
+        let wallet = Number.parseFloat(100);
+        let betAmount=50;
+        let earnedValue;
+        let percentageEarned= 0.9;
+        let winner = false;
+        if(winner){
+            earnedValue = betAmount * percentageEarned
+            wallet += earnedValue,
+            document.write(`Parabéns você ganhou ${earnedValue}, e agora posuui ${wallet} TK's`);
+        }
+        else{
+            wallet -= betAmount;
+            document.write(`Se Ferrou e perdeu seu dinheiro , atualmente você tem ${wallet} TK's`);
+        }
+    </script>
+
 </body>
 </html>
