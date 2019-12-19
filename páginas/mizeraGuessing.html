@@ -12,20 +12,66 @@
             font: normal 23pt Arial;
         }
         h1 {
-            color:white;
+            color:yellow;
+        }
+        h2 {
+            color: white;
+        }
+        input {
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            background: rgb(226, 205, 133) ;
+            color: black;
+        }
+        ::-webkit-input-placeholder {
+            color: black;
+            font: 12px verdana, arial;
         }
     </style>
 </head>
 <body>
     <h1>Mizera Guessing</h1>
-
+    <h2>Advinhe um número de 0 a 20, e ganhe milhares de TK's</h2>
+    <input type="number" name="" id="txtInsertedNumber" placeholder="Insira um Número">
+    <p id="txtWrong">mano esse paragrafo existe </p>
     <script>
+        let txtNumber = window.document.getElementById('txtInsertedNumber');
+        let drawnNumber;
+        let n1;
+        txtNumber.addEventListener('keydown',function(e){
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                return mainLoop(this.value)
+             }
+        })
+        drawnNumber = Math.floor(Math.random()* 20 + 1);
+        document.write(drawnNumber)
+
+        function mainLoop(n1){
+            Number.parseInt(n1);
+            while(drawnNumber != n1){
+                if(drawnNumber < n1){
+                    let wrong= document.querySelector('p#txtWrong');
+                    txtWrong.innerHTML(`O número ${n1} é menor`);
+
+                }
+                else if(drawnNumber > n1 ){
+                    let wrong= document.querySelector('p#txtWrong');
+                    wrong.innerHTML(`O número ${n1} é menor`);
+                }
+                else(drawnNumber == n1) 
+                    let wrong= document.querySelector('p#txtWrong');
+                    wrong.innerHTML(`Acertou Mizeravi`);
+                
+            }
+        }    
         let wallet = Number.parseFloat(100);
-        let betAmount=50;
+        let betAmount;
         let earnedValue;
-        let percentageEarned= 0.9;
+        let percentageEarned;
         let winner = false;
-        if(winner){
+    /*if(winner){
             earnedValue = betAmount * percentageEarned
             wallet += earnedValue,
             document.write(`Parabéns você ganhou ${earnedValue}, e agora posuui ${wallet} TK's`);
@@ -33,7 +79,7 @@
         else{
             wallet -= betAmount;
             document.write(`Se Ferrou e perdeu seu dinheiro , atualmente você tem ${wallet} TK's`);
-        }
+        }*/ 
     </script>
 
 </body>
