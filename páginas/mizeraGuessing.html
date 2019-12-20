@@ -74,9 +74,11 @@
             let key = e.which || e.keyCode;
             if (key == 13) {
                 guess = this.value;
+                
                 MainLoop();
             }
         });
+        
 
         function MainLoop() {
             if (countRetry < 5) {
@@ -131,11 +133,9 @@
                 window.alert("aposta mínima 10")
             } else {
                 let buttonBet = document.getElementById("buttonBet");
-                txtBetAmount.disabled = true;
+                document.getElementById("txtInsertBet").disabled = true;
                 buttonBet.disabled = true;
                 window.alert(txtBetAmount);
-
-
             }
 
         }
