@@ -1,101 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mizera Guessing</title>
     <style>
-        body {  
-            background: rgb(0,39,118);
+        body {
+            background: rgb(0, 39, 118);
             color: white;
             font: normal 23pt Arial;
         }
+
         h1 {
-            color:yellow;
+            color: yellow;
         }
+
         h2 {
             color: white;
         }
+
         input {
             width: 150px;
             height: 40px;
             text-align: center;
-            background: rgb(226, 205, 133) ;
+            background: rgb(226, 205, 133);
             color: black;
         }
+
         ::-webkit-input-placeholder {
             color: black;
             font: 12px verdana, arial;
-<<<<<<< HEAD
-=======
         }
-        input#buttonBet{
+
+        input#buttonBet {
             width: 70px;
             height: 40px;
             text-align: center;
-            background: rgb(117, 117, 117) ;
+            background: rgb(117, 117, 117);
             color: rgb(255, 255, 255);
->>>>>>> 27b60f55fe59ef910f02f00d21ecf787aed529eb
         }
     </style>
 </head>
+
 <body>
     <h1>Mizera Guessing</h1>
     <h2>Advinhe um número de 0 a 20, e ganhe milhares de TK's</h2>
-<<<<<<< HEAD
-    <input type="number" name="" id="txtInsertedNumber" placeholder="Insira um Número">
-    <p id="txtWrong">mano esse paragrafo existe </p>
-    <script>
-        let txtNumber = window.document.getElementById('txtInsertedNumber');
-        let drawnNumber;
-        let n1;
-        txtNumber.addEventListener('keydown',function(e){
-            if (e.keyCode == 13) {
-                e.preventDefault();
-                return mainLoop(this.value)
-             }
-        })
-        drawnNumber = Math.floor(Math.random()* 20 + 1);
-        document.write(drawnNumber)
-
-        function mainLoop(n1){
-            Number.parseInt(n1);
-            while(drawnNumber != n1){
-                if(drawnNumber < n1){
-                    let wrong= document.querySelector('p#txtWrong');
-                    txtWrong.innerHTML(`O número ${n1} é menor`);
-
-                }
-                else if(drawnNumber > n1 ){
-                    let wrong= document.querySelector('p#txtWrong');
-                    wrong.innerHTML(`O número ${n1} é menor`);
-                }
-                else(drawnNumber == n1) 
-                    let wrong= document.querySelector('p#txtWrong');
-                    wrong.innerHTML(`Acertou Mizeravi`);
-                
-            }
-        }    
-        let wallet = Number.parseFloat(100);
-        let betAmount;
-        let earnedValue;
-        let percentageEarned;
-        let winner = false;
-    /*if(winner){
-            earnedValue = betAmount * percentageEarned
-            wallet += earnedValue,
-            document.write(`Parabéns você ganhou ${earnedValue}, e agora posuui ${wallet} TK's`);
-        }
-        else{
-            wallet -= betAmount;
-            document.write(`Se Ferrou e perdeu seu dinheiro , atualmente você tem ${wallet} TK's`);
-        }*/ 
-=======
-    <input type="number" name="txtInsertedBet" id="txtInsertBet" placeholder="Quanto quer Apostar:" onfocus="this.value=''">
-    <input type="button" value="Apostar" id="buttonBet">
+    <input type="number" name="txtInsertedBet" id="txtInsertBet" placeholder="Quanto quer Apostar:"
+        onfocus="this.value=''">
+    <input type="button" value="Apostar!" id="buttonBet" onClick="javascript: TestBetAmmount()">
     <br></br>
-    <input type="number" name="" id="txtInsertedNumber" placeholder="Insira um Número " onfocus="this.value=''" >
+    <input type="number" name="" id="txtInsertedNumber" placeholder="Insira um Número " onfocus="this.value=''">
     <p id="txtwarning"></p>
     <p id="txtWrong"></p>
     <h3 id="txtFinalMessage"></h3>
@@ -103,67 +59,89 @@
         let txtNumber = window.document.getElementById('txtInsertedNumber');
         let drawnNumber;
         let wallet = Number.parseFloat(100);
-        let betAmount;
-        let txtBetAmount = document.getElementById('txtInsertedBet');
+        let betAmount = 0;
         let earnedValue;
         let percentageEarned;
         let winner = false;
-        let n1;
-        let n;
+        let intGuess;
+        let guess;
         let countRetry = 0;
-        drawnNumber = Math.floor(Math.random()* 20 + 1);
-        document.write(drawnNumber)
-        txtNumber.addEventListener('keydown',function(e){
+        drawnNumber = Math.floor(Math.random() * 20 + 1);
+
+        document.write(drawnNumber);
+
+        txtNumber.addEventListener('keydown', function (e) {
             let key = e.which || e.keyCode;
             if (key == 13) {
-                n=this.value;
+                guess = this.value;
+                
                 MainLoop();
-            }     
-        })
-        function MainLoop(){
-                    if(countRetry<5){
-                        countRetry++;
-                        n1 = Number.parseInt(n);
-                        let wrong = document.querySelector('p#txtWrong');
-                        let warning = document.querySelector('p#txtwarning');
-                        if(drawnNumber < n1){
-                            wrong.innerHTML = `O número ${n1} é maior que a chave`;
-                            warning.innerHTML = `Essa foi a sua <strong>${countRetry}º</strong> tentativa, só restam <strong>${5-countRetry} </strong>`;
-                            winner = false;
-                            Final();
-                            return;
-                        }
-                        else if(drawnNumber > n1 ){
-                            wrong.innerHTML = `O número ${n1} é menor que a chave`;
-                            warning.innerHTML = `Essa foi a sua <strong>${countRetry}º</strong> tentativa, só restam <strong>${5-countRetry} </strong>`;
-                            winner = false;
-                            Final();
-                            return;
-                        }
-                        else if(drawnNumber == n1){ 
-                            countRetry = 5;
-                            wrong.innerHTML = `Acertou Mizeravi`;
-                            warning.innerHTML = `Essa foi a sua <strong>${countRetry}º</strong> tentativa, só restam <strong>${5-countRetry} (porque você é cagado e acertou) </strong>`;
-                            winner = true;
-                            Final();
-                            return ;
-                        }
-                    }
-                }      
-            function Final(){
-                let finalMessage = document.querySelector('h3#txtFinalMessage');
-                if((winner == true) && (countRetry==5)){
-                    earnedValue = betAmount * percentageEarned;
-                    wallet += earnedValue;
-                    finalMessage.innerHTML =` Parabéns você ganhou <strong>${earnedValue}</strong>, e agora possui <strong>${wallet}TK's</strong>`;
+            }
+        });
+        
+
+        function MainLoop() {
+            if (countRetry < 5) {
+                countRetry++;
+                intGuess = Number.parseInt(guess);
+                let wrong = document.querySelector('p#txtWrong');
+                let warning = document.querySelector('p#txtwarning');
+                if (drawnNumber < intGuess) {
+                    wrong.innerHTML = `O número ${intGuess} é maior que a chave`;
+                    warning.innerHTML = `Essa foi a sua <strong>${countRetry}º</strong> tentativa, só restam <strong>${5 - countRetry} </strong>`;
+                    winner = false;
+                    Final();
+                    return;
                 }
-                else if(winner == 0 && countRetry == 5){
-                    wallet -= betAmount;
-                    finalMessage.innerHTML = ` Parabéns você acaba de nos deixar mais rico perdeu <strong>${betAmount}</strong>, e agora possui <strong>${wallet}TK's</strong>`;
+                else if (drawnNumber > intGuess) {
+                    wrong.innerHTML = `O número ${intGuess} é menor que a chave`;
+                    warning.innerHTML = `Essa foi a sua <strong>${countRetry}º</strong> tentativa, só restam <strong>${5 - countRetry} </strong>`;
+                    winner = false;
+                    Final();
+                    return;
                 }
-            }    
->>>>>>> 27b60f55fe59ef910f02f00d21ecf787aed529eb
+                else if (drawnNumber == intGuess) {
+
+                    countRetry = 5;
+                    wrong.innerHTML = `Acertou Mizeravi`;
+                    warning.innerHTML = `Essa foi a sua <strong>${countRetry}º</strong> tentativa, só restam <strong>${5 - countRetry} (porque você é cagado e acertou) </strong>`;
+                    winner = true;
+                    Final();
+                    return;
+                }
+            }
+        }
+        function Final() {
+            let finalMessage = document.querySelector('h3#txtFinalMessage');
+            if ((winner == true) && (countRetry == 5)) {
+                earnedValue = betAmount * percentageEarned;
+                wallet += earnedValue;
+                finalMessage.innerHTML = ` Parabéns você ganhou <strong>${earnedValue}</strong>, e agora possui <strong>${wallet}TK's</strong>`;
+            }
+            else if (winner == false && countRetry == 5) {
+                alert(document.getElementById("txtInsertBet").value);
+                wallet -= betAmount;
+                finalMessage.innerHTML = ` Parabéns você acaba de nos deixar mais rico perdeu <strong>${betAmount}</strong>, e agora possui <strong>${wallet}TK's</strong>`;
+
+            }
+        }
+
+
+        function TestBetAmmount() {
+            let txtBetAmount = document.getElementById("txtInsertBet").value;
+            if (txtBetAmount <= 9) {
+                window.alert("aposta mínima 10")
+            } else {
+                let buttonBet = document.getElementById("buttonBet");
+                document.getElementById("txtInsertBet").disabled = true;
+                buttonBet.disabled = true;
+                window.alert(txtBetAmount);
+            }
+
+        }
+
     </script>
 
 </body>
+
 </html>
